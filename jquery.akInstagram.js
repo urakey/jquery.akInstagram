@@ -105,7 +105,7 @@
         htmlSrc += tmpHtmlSrc;
       }
 
-      return newCommers;
+      return htmlSrc;
     }
 
     function appendHtml($dom, htmlSrc) {
