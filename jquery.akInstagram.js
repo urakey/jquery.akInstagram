@@ -77,7 +77,7 @@
       var books   = data.books;
       var htmlTag = options.tag;
       var item, caption, link, image, imageUrl, imageW, imageH, htmlSrc;
-      var newCommers = [];
+      var newCommers = '';
 
       if (items.length <= 0) return;
       if (items.length < count) count = items.length;
@@ -102,18 +102,15 @@
         if (options.link && link ) htmlSrc += '</a>';
         htmlSrc += '</' + htmlTag + '>';
 
-        newCommers.push(htmlSrc);
+        newCommers += htmlSrc;
       }
 
       return newCommers;
     }
 
-    function appendHtml($dom, htmlSrcArray) {
-
-      if(htmlSrcArray.length <= 0) return;
-      $.each(htmlSrcArray, function(index, htmlSrc){
-        $dom.append(htmlSrc);
-      });
+    function appendHtml($dom, htmlSrc) {
+      if(htmlSrc) return;
+      $dom.append(htmlSrc);
     }
 
   };
