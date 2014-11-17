@@ -76,8 +76,8 @@
       var count   = options.count;
       var books   = data.books;
       var htmlTag = options.tag;
-      var item, caption, link, image, imageUrl, imageW, imageH, htmlSrc;
-      var newCommers = '';
+      var item, caption, link, image, imageUrl, imageW, imageH, tmpHtmlSrc;
+      var htmlSrc = '';
 
       if (items.length <= 0) return;
       if (items.length < count) count = items.length;
@@ -94,15 +94,15 @@
         if (options.filter) filter   = item.filter;
 
         // MEMO: DOM は自由に作れたほうがいい？あとで検討する
-        if (options.className) htmlSrc  = '<' + htmlTag + ' class="' + options.className + '">';
-        else htmlSrc  = '<' + htmlTag + '>';
+        if (options.className) tmpHtmlSrc  = '<' + htmlTag + ' class="' + options.className + '">';
+        else tmpHtmlSrc  = '<' + htmlTag + '>';
 
-        if (options.link && link ) htmlSrc += '<a href="' + link + '" target="_blank">';
-        htmlSrc += '<img src="' + imageUrl + '" alt="' + caption + '" width="' + imageW + '" height="' + imageH + '">';
-        if (options.link && link ) htmlSrc += '</a>';
-        htmlSrc += '</' + htmlTag + '>';
+        if (options.link && link ) tmpHtmlSrc += '<a href="' + link + '" target="_blank">';
+        tmpHtmlSrc += '<img src="' + imageUrl + '" alt="' + caption + '" width="' + imageW + '" height="' + imageH + '">';
+        if (options.link && link ) tmpHtmlSrc += '</a>';
+        tmpHtmlSrc += '</' + htmlTag + '>';
 
-        newCommers += htmlSrc;
+        htmlSrc += tmpHtmlSrc;
       }
 
       return newCommers;
