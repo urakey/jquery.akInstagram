@@ -109,7 +109,7 @@
     }
 
     function appendHtml($dom, htmlSrc) {
-      if(htmlSrc) return;
+      if(!htmlSrc) return;
       $dom.append(htmlSrc);
     }
 
