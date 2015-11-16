@@ -84,7 +84,7 @@
 
       for (var i = 0, length = count; i < length; i++) {
         item     = items[i];
-        caption  = if ( !item.caption ) ? "" : item.caption.text ;
+        caption  = if ( !item.caption ) ? '' : item.caption.text ;
         link     = item.link;
         image    = item.images[options.size];
         imageUrl = image.url;
